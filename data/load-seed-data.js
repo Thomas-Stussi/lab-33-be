@@ -1,5 +1,6 @@
-const client = require('../lib/client');
-const recipeData = require('./recipeArray');
+/* eslint-disable indent */
+const client = require('../lib/utils/pool');
+const recipeData = require('./recipeData');
 
 run();
 
@@ -14,13 +15,13 @@ async function run() {
                             VALUES ($1, $2, $3, $4, $5)
                             RETURNING *;
                         `,
-        [recipe.name, recipe.ingredients, recipe.directions, recipe.source, recipe.date]);
+          [recipe.name, JSON.stringify(recipe.ingredients), recipe.directions, recipe.source, recipe.date]);
       })
     );
 
     console.log('seed data load complete');
   }
-  catch(err) {
+  catch (err) {
     console.log(err);
   }
   finally {

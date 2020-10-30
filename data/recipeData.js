@@ -1,4 +1,4 @@
-const recipeData = [
+module.exports = [
   {
     name: 'Tart de Bry',
     ingredients: [
@@ -57,5 +57,3 @@ const recipeData = [
     date: 'USA, 1862'
   }
 ];
-
-export default recipeData;
