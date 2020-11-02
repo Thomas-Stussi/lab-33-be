@@ -4,5 +4,7 @@ const request = require('supertest');
 const app = require('../lib/app');
 
 describe('lab-33-be routes', () => {
-  expect(1).toEqual(1);
+  it('is one', () => {
+    expect(1).toEqual(1);
+  });
 });
