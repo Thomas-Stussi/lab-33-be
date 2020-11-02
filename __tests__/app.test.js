@@ -88,7 +88,7 @@ describe('recipe-lab routes', () => {
       .put(`/api/v1/recipes/${recipe.id}`)
       .send(testRecipe3)
       .then(res => {
-        expect(res.body).toEqual({ ...testRecipe3, id: '1' });
+        expect(res.body).toEqual({ ...testRecipe3, id: expect.any(String) });
       });
   });
 
