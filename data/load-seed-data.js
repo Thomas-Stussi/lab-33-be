@@ -15,7 +15,7 @@ async function run() {
                             VALUES ($1, $2, $3, $4, $5)
                             RETURNING *;
                         `,
-          [recipe.name, JSON.stringify(recipe.ingredients), recipe.directions, recipe.source, recipe.date]);
+          [recipe.name, recipe.ingredients, recipe.directions, recipe.source, recipe.date]);
       })
     );
 
